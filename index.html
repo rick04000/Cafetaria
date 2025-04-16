@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cafetaria | Verse snacks & maaltijden bezorgd</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="loader">
+            <svg class="spinner" viewBox="0 0 50 50">
+                <circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="5"></circle>
+            </svg>
+            <div class="loader-text">Cafetaria</div>
+        </div>
+    </div>
+
+    <!-- Mobile navigation overlay -->
+    <div class="mobile-nav-overlay">
+        <div class="mobile-nav-container">
+            <div class="mobile-nav-header">
+                <div class="logo">
+                    <span class="logo-text">Cafetaria <span id="mobile-location-text">Geldrop</span></span>
+                </div>
+                <button class="close-menu-btn" aria-label="Sluit menu">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <nav class="mobile-nav-links">
+                <a href="#" class="active">Home</a>
+                <a href="#menu">Menukaart</a>
+                <a href="#about">Over ons</a>
+                <a href="#contact">Contact</a>
+                <div class="mobile-locations">
+                    <h4>Onze locaties</h4>
+                    <div class="mobile-location-options">
+                        <button class="mobile-location-btn active" data-location="geldrop">
+                            <span class="location-icon"><i class="fas fa-store"></i></span>
+                            <div class="location-info">
+                                <span class="location-name">Geldrop</span>
+                                <span class="location-address">Beneden beekloop 32</span>
+                            </div>
+                        </button>
+                        <button class="mobile-location-btn" data-location="heeze">
+                            <span class="location-icon"><i class="fas fa-store"></i></span>
+                            <div class="location-info">
+                                <span class="location-name">Heeze</span>
+                                <span class="location-address">Jan Deckersstraat 45</span>
+                            </div>
+                        </button>
+                        <button class="mobile-location-btn" data-location="eindhoven">
+                            <span class="location-icon"><i class="fas fa-store"></i></span>
+                            <div class="location-info">
+                                <span class="location-name">Eindhoven</span>
+                                <span class="location-address">Ouverture 133, Blixembosch</span>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+                <div class="mobile-nav-cta">
+                    <a href="tel:040-3033255" id="mobile-menu-phone" class="btn btn-primary">
+                        <i class="fas fa-phone-alt"></i>
+                        Bestel nu
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <span class="logo-text">Cafetaria <span id="header-location-text">Geldrop</span></span>
+                </div>
+                <nav class="desktop-nav">
+                    <ul>
+                        <li><a href="#" class="active">Home</a></li>
+                        <li><a href="#menu">Menukaart</a></li>
+                        <li><a href="#about">Over ons</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="header-actions">
+                    <div class="location-selector">
+                        <button class="location-toggle">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span id="current-location-text">Geldrop</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="location-dropdown">
+                            <div class="location-item active" data-location="geldrop">
+                                <div class="location-details">
+                                    <h4>Geldrop</h4>
+                                    <p>Beneden beekloop 32, 5662 HL</p>
+                                </div>
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <div class="location-item" data-location="heeze">
+                                <div class="location-details">
+                                    <h4>Heeze</h4>
+                                    <p>Jan Deckersstraat 45, 5591 HS</p>
+                                </div>
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <div class="location-item" data-location="eindhoven">
+                                <div class="location-details">
+                                    <h4>Eindhoven (Blixembosch)</h4>
+                                    <p>Ouverture 133, 5629 PV</p>
+                                </div>
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <div class="auto-detect">
+                                <button id="detect-location">
+                                    <i class="fas fa-location-crosshairs"></i>
+                                    <span>Gebruik mijn locatie</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="tel:040-3033255" id="order-phone-link" class="btn btn-primary">
+                        <i class="fas fa-phone-alt"></i>
+                        Bestel nu
+                    </a>
+                </div>
+                <button class="mobile-menu-toggle" aria-label="Open menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-bg-container">
+            <div class="hero-bg-overlay"></div>
+            <div class="hero-bg-pattern"></div>
+        </div>
+        <div class="hero-content-wrapper">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <div class="hero-subtitle">
+                            <div class="status-badge">
+                                <span class="status-indicator"></span>
+                                <span class="status-text">Nu geopend</span>
+                            </div>
+                        </div>
+                        <h1>Snelle bezorging, <br><span class="highlight">verse kwaliteit</span></h1>
+                        <p>Geniet van huisgemaakte snacks en complete maaltijden, vers bereid en snel bezorgd in <span id="hero-location-text">Geldrop</span></p>
+                        <div class="hero-buttons">
+                            <a href="#menu" class="btn btn-primary btn-lg">
+                                <span>Bekijk menukaart</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                            <a href="tel:040-3033255" id="hero-phone-link" class="btn btn-outline btn-lg">
+                                <i class="fas fa-phone-alt"></i> <span id="hero-phone-number">040-3033255</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="hero-image">
+                        <div class="image-container">
+                            <img src="images/hero-food.png" alt="Heerlijke gerechten van Cafetaria" class="img-main">
+                            <div class="floating-elements">
+                                <div class="floating-badge badge-delivery">
+                                    <i class="fas fa-motorcycle"></i>
+                                    <span>Gratis bezorging vanaf €15</span>
+                                </div>
+                                <div class="floating-badge badge-time">
+                                    <i class="fas fa-clock"></i>
+                                    <span>In 30 min. bezorgd</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-scroll-indicator">
+            <a href="#location-banner" aria-label="Scroll naar beneden">
+                <i class="fas fa-chevron-down"></i>
+            </a>
+        </div>
+        <div class="hero-shape"></div>
+    </section>
+
+    <!-- Locatie banner -->
+    <div class="location-banner" id="location-banner">
+        <div class="container">
+            <div class="banner-content">
+                <div class="current-branch">
+                    <div class="branch-icon">
+                        <i class="fas fa-store"></i>
+                    </div>
+                    <div class="branch-info">
+                        <span class="label">Je bekijkt nu</span>
+                        <h3>Cafetaria <span id="banner-location-text">Geldrop</span></h3>
+                    </div>
+                </div>
+                <div class="branch-details" id="geldrop-details">
+                    <div class="detail">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Beneden beekloop 32, Geldrop</span>
+                    </div>
+                    <div class="detail">
+                        <i class="fas fa-phone-alt"></i>
+                        <span>040-3033255</span>
+                    </div>
+                    <div class="detail opening-hours">
+                        <i class="fas fa-clock"></i>
+                        <span>Vandaag open: 12:00 - 21:00</span>
+                    </div>
+                </div>
+                <div class="branch-details" id="heeze-details" style="display: none;">
+                    <div class="detail">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Jan Deckersstraat 45, Heeze</span>
+                    </div>
+                    <div class="detail">
+                        <i class="fas fa-phone-alt"></i>
+                        <span>040-2261135</span>
+                    </div>
+                    <div class="detail opening-hours">
+                        <i class="fas fa-clock"></i>
+                        <span>Vandaag open: 12:00 - 21:00</span>
+                    </div>
+                </div>
+                <div class="branch-details" id="eindhoven-details" style="display: none;">
+                    <div class="detail">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Ouverture 133, Eindhoven</span>
+                    </div>
+                    <div class="detail">
+                        <i class="fas fa-phone-alt"></i>
+                        <span>040-2427863</span>
+                    </div>
+                    <div class="detail opening-hours">
+                        <i class="fas fa-clock"></i>
+                        <span>Vandaag open: 12:00 - 21:00</span>
+                    </div>
+                </div>
+                <div class="other-branches">
+                    <button class="change-location-btn">
+                        <i class="fas fa-exchange-alt"></i>
+                        <span>Andere vestiging</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Service highlights -->
+    <section class="service-highlights">
+        <div class="container">
+            <div class="service-cards">
+                <div class="service-card">
+                    <div class="icon-container">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Snel bezorgd</h3>
+                    <p>Binnen 30 minuten bezorgd in <span class="location-text">Geldrop</span></p>
+                </div>
+                <div class="service-card">
+                    <div class="icon-container">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>Verse ingrediënten</h3>
+                    <p>Dagelijks verse producten en ingrediënten</p>
+                </div>
+                <div class="service-card">
+                    <div class="icon-container">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h3>Allergenenvrij & Halal</h3>
+                    <p>Ruim assortiment voor diverse dieetwensen</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Menu Items Section -->
+    <section class="popular-menu" id="menu">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-title-wrapper">
+                    <h2>Populaire <span class="highlight">gerechten</span></h2>
+                    <div class="title-decoration"></div>
+                </div>
+                <p>Ontdek onze meest bestelde specialiteiten, bereid met passie en kwaliteit</p>
+            </div>
+            <div class="food-categories">
+                <button class="cat-btn active" data-category="all">Alle gerechten</button>
+                <button class="cat-btn" data-category="snacks">Snacks</button>
+                <button class="cat-btn" data-category="schotels">Schotels</button>
+                <button class="cat-btn" data-category="loaded">Loaded Fries</button>
+                <button class="cat-btn" data-category="burgers">Broodjes</button>
+            </div>
+            <div class="menu-grid">
+                <div class="food-item" data-category="snacks">
+                    <div class="food-img">
+                        <img src="images/frikandel-speciaal.jpg" alt="Frikandel Speciaal">
+                        <div class="food-overlay">
+                            <button class="quick-add" aria-label="Toevoegen aan bestelling">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="food-info">
+                        <h3>Frikandel Speciaal</h3>
+                        <div class="food-meta">
+                            <span class="food-price">€2,75</span>
+                            <div class="food-rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.8</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="food-item" data-category="schotels">
+                    <div class="food-img">
+                        <img src="images/schnitzel-schotel.jpg" alt="Schnitzel Schotel">
+                        <div class="food-badge">Populair</div>
+                        <div class="food-overlay">
+                            <button class="quick-add" aria-label="Toevoegen aan bestelling">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="food-info">
+                        <h3>Schnitzel Schotel</h3>
+                        <div class="food-meta">
+                            <span class="food-price">€9,50</span>
+                            <div class="food-rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.9</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="food-item" data-category="loaded">
+                    <div class="food-img">
+                        <img src="images/loaded-fries.jpg" alt="Loaded Fries">
+                        <div class="food-badge">Nieuw</div>
+                        <div class="food-overlay">
+                            <button class="quick-add" aria-label="Toevoegen aan bestelling">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="food-info">
+                        <h3>Loaded Fries</h3>
+                        <div class="food-meta">
+                            <span class="food-price">€7,95</span>
+                            <div class="food-rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.7</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="food-item" data-category="burgers">
+                    <div class="food-img">
+                        <img src="images/broodje-hamburger.jpg" alt="Broodje Hamburger">
+                        <div class="food-overlay">
+                            <button class="quick-add" aria-label="Toevoegen aan bestelling">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="food-info">
+                        <h3>Broodje Hamburger</h3>
+                        <div class="food-meta">
+                            <span class="food-price">€3,95</span>
+                            <div class="food-rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.5</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="food-item" data-category="snacks">
+                    <div class="food-img">
+                        <img src="images/kroketten.jpg" alt="Kroketten">
+                        <div class="food-overlay">
+                            <button class="quick-add" aria-label="Toevoegen aan bestelling">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="food-info">
+                        <h3>Kroketten (2 stuks)</h3>
+                        <div class="food-meta">
+                            <span class="food-price">€3,50</span>
+                            <div class="food-rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.6</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="food-item" data-category="schotels">
+                    <div class="food-img">
+                        <img src="images/kapsalon.jpg" alt="Kapsalon">
+                        <div class="food-badge">Favoriet</div>
+                        <div class="food-overlay">
+                            <button class="quick-add" aria-label="Toevoegen aan bestelling">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="food-info">
+                        <h3>Kapsalon</h3>
+                        <div class="food-meta">
+                            <span class="food-price">€8,50</span>
+                            <div class="food-rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.9</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="menu-bottom">
+                <a href="#" class="btn btn-primary">Bekijk volledige menukaart</a>
+                <div class="menu-links">
+                    <a href="#" class="menu-link">Menukaart (drank en snacks)</a>
+                    <a href="#" class="menu-link">Menukaart (schotels en broodjes)</a>
+                    <a href="#" class="menu-link">Lunchkaart</a>
+                    <a href="#" class="menu-link">Menukaart deel 2</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Order process -->
+    <section class="order-process">
+        <div class="order-process-bg"></div>
+        <div class="container">
+            <div class="section-header">
+                <div class="section-title-wrapper">
+                    <h2>Eenvoudig <span class="highlight">bestellen</span></h2>
+                    <div class="title-decoration"></div>
+                </div>
+                <p>Bestel in drie simpele stappen en geniet van onze heerlijke gerechten</p>
+            </div>
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <div class="step-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Bel ons</h3>
+                    <p>Bel naar <span class="phone-number-text">040-3033255</span> om je bestelling door te geven</p>
+                </div>
+                <div class="process-line">
+                    <div class="process-line-inner"></div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <div class="step-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h3>Wij bereiden</h3>
+                    <p>We maken je bestelling vers klaar in onze keuken</p>
+                </div>
+                <div class="process-line">
+                    <div class="process-line-inner"></div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <div class="step-icon">
+                        <i class="fas fa-motorcycle"></i>
+                    </div>
+                    <h3>Bezorging of afhalen</h3>
+                    <p>Kies voor snelle bezorging of haal af in onze zaak</p>
+                </div>
+            </div>
+            <div class="order-cta">
+                <div class="cta-card">
+                    <h3>Bestel nu telefonisch</h3>
+                    <p>Geef je bestelling eenvoudig door via de telefoon</p>
+                    <a href="tel:040-3033255" id="cta-phone-link" class="btn btn-light btn-lg">
+                        <i class="fas fa-phone-alt"></i> <span id="cta-phone-number">040-3033255</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section class="about-us" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image">
+                    <div class="img-collage">
+                        <img src="images/cafetaria-interior.jpg" alt="Interieur van Cafetaria" class="main-img">
+                        <img src="images/owners.jpg" alt="Chantal en Danny" class="secondary-img">
+                        <div class="experience-badge">
+                            <span class="years">25+</span>
+                            <span class="text">jaar ervaring</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-content">
+                    <div class="section-header text-left">
+                        <div class="section-title-wrapper">
+                            <h2>Welkom bij <span class="highlight">Cafetaria <span id="about-location-text">Geldrop</span></span></h2>
+                            <div class="title-decoration"></div>
+                        </div>
+                    </div>
+                    <div class="about-text">
+                        <div id="geldrop-about" class="location-specific-content active">
+                            <p>Cafetaria Geldrop is vanaf januari geopend! Wij zijn Chantal en Danny, samen hebben wij onze passie uitgebreid tot een derde cafetaria genaamd <strong>Cafetaria Geldrop</strong>.</p>
+                            
+                            <p>Na een cafetaria in Eindhoven in de wijk Blixembosch en cafetaria Heeze in Heeze, zijn we trots dat we nu in Geldrop een prachtige zaak mogen openen.</p>
+                            
+                            <p>Met onze 25 jaar aan ervaring hebben we een prachtige zaak weten neer te zetten. U kunt bij ons terecht voor een uitgebreid diner maar ook voor afhaal uiteraard. U kunt bij ons een drie gangen diner nemen, ook hebben we overheerlijke loaded schotels en loaded fries. Tevens hebben we ook een ruim assortiment aan allergenen vrije snacks en halal snacks.</p>
+                            
+                            <p>Wij hopen u te kunnen verwelkomen.</p>
+                            <p>Tot ziens bij cafetaria Geldrop.</p>
+                        </div>
+                        
+                        <div id="heeze-about" class="location-specific-content">
+                            <p>Cafetaria Heeze is onze tweede vestiging. Wij zijn Chantal en Danny, en we brengen onze jarenlange ervaring naar het mooie Heeze.</p>
+                            
+                            <p>Na het succes van onze cafetaria in Eindhoven in de wijk Blixembosch, hebben we onze passie uitgebreid naar Heeze en later ook naar Geldrop.</p>
+                            
+                            <p>Met onze 25 jaar aan ervaring hebben we een prachtige zaak weten neer te zetten. U kunt bij ons terecht voor een uitgebreid diner maar ook voor afhaal uiteraard. U kunt bij ons een drie gangen diner nemen, ook hebben we overheerlijke loaded schotels en loaded fries. Tevens hebben we ook een ruim assortiment aan allergenen vrije snacks en halal snacks.</p>
+                            
+                            <p>Wij hopen u te kunnen verwelkomen.</p>
+                            <p>Tot ziens bij cafetaria Heeze.</p>
+                        </div>
+                        
+                        <div id="eindhoven-about" class="location-specific-content">
+                            <p>Cafetaria Eindhoven in de wijk Blixembosch is onze eerste vestiging. Wij zijn Chantal en Danny, en hier begon ons avontuur in de wereld van kwaliteitssnacks.</p>
+                            
+                            <p>Na het succes in Blixembosch hebben we onze passie uitgebreid met cafetaria's in Heeze en Geldrop.</p>
+                            
+                            <p>Met onze 25 jaar aan ervaring hebben we een prachtige zaak weten neer te zetten. U kunt bij ons terecht voor een uitgebreid diner maar ook voor afhaal uiteraard. U kunt bij ons een drie gangen diner nemen, ook hebben we overheerlijke loaded schotels en loaded fries. Tevens hebben we ook een ruim assortiment aan allergenen vrije snacks en halal snacks.</p>
+                            
+                            <p>Wij hopen u te kunnen verwelkomen.</p>
+                            <p>Tot ziens bij cafetaria Eindhoven Blixembosch.</p>
+                        </div>
+                    </div>
+                    <div class="about-features">
+                        <div class="feature">
+                            <div class="feature-icon">
+                                <i class="fas fa-certificate"></i>
+                            </div>
+                            <div class="feature-text">
+                                <h4>Kwaliteitssnacks</h4>
+                                <p>Verse ingrediënten, huisgemaakte sauzen</p>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div class="feature-text">
+                                <h4>Familiezaak</h4>
+                                <p>Persoonlijke service en gastvrijheid</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location & Hours -->
+    <section class="location-hours" id="contact">
+        <div class="container">
+            <div class="location-grid">
+                <div class="location-info">
+                    <div class="section-header text-left">
+                        <div class="section-title-wrapper">
+                            <h2>Ons <span class="highlight">bezoeken</span></h2>
+                            <div class="title-decoration"></div>
+                        </div>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="info-content">
+                                <h3>Locatie</h3>
+                                <div class="location-specific-address active" id="geldrop-address">
+                                    <p>Beneden beekloop 32<br>5662 HL Geldrop</p>
+                                    <a href="https://maps.google.com/?q=Beneden+beekloop+32+5662+HL+Geldrop" target="_blank" class="link-arrow">
+                                        Bekijk op Google Maps <i class="fas fa-arrow-right"></i>
+                                    </a>
+                                </div>
+                                <div class="location-specific-address" id="heeze-address">
+                                    <p>Jan Deckersstraat 45<br>5591 HS Heeze</p>
+                                    <a href="https://maps.google.com/?q=Jan+Deckersstraat+45+5591+HS+Heeze" target="_blank" class="link-arrow">
+                                        Bekijk op Google Maps <i class="fas fa-arrow-right"></i>
+                                    </a>
+                                </div>
+                                <div class="location-specific-address" id="eindhoven-address">
+                                    <p>Ouverture 133<br>5629 PV Eindhoven (Blixembosch)</p>
+                                    <a href="https://maps.google.com/?q=Ouverture+133+5629+PV+Eindhoven" target="_blank" class="link-arrow">
+                                        Bekijk op Google Maps <i class="fas fa-arrow-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div class="info-content">
+                                <h3>Bestel telefonisch</h3>
+                                <div class="location-specific-phone active" id="geldrop-phone">
+                                    <a href="tel:040-3033255" class="phone-number">040-3033255</a>
+                                </div>
+                                <div class="location-specific-phone" id="heeze-phone">
+                                    <a href="tel:040-2261135" class="phone-number">040-2261135</a>
+                                </div>
+                                <div class="location-specific-phone" id="eindhoven-phone">
+                                    <a href="tel:040-2427863" class="phone-number">040-2427863</a>
+                                </div>
+                                <p class="hint-text">Bel ons voor uw bestelling!</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="info-content">
+                                <h3>Openingstijden</h3>
+                                <div class="hours-grid">
+                                    <div class="day">Maandag</div>
+                                    <div class="time">12:00 – 21:00</div>
+                                    <div class="day">Dinsdag</div>
+                                    <div class="time">12:00 – 21:00</div>
+                                    <div class="day">Woensdag</div>
+                                    <div class="time">12:00 – 21:00</div>
+                                    <div class="day">Donderdag</div>
+                                    <div class="time">12:00 – 21:00</div>
+                                    <div class="day">Vrijdag</div>
+                                    <div class="time">12:00 – 21:00</div>
+                                    <div class="day">Zaterdag</div>
+                                    <div class="time">12:00 – 21:00</div>
+                                    <div class="day">Zondag</div>
+                                    <div class="time">12:00 – 21:00</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="location-map">
+                    <div class="map-wrapper">
+                        <div class="location-specific-map active" id="geldrop-map">
+                            <img src="images/map-geldrop.jpg" alt="Kaart locatie Cafetaria Geldrop" class="map-img">
+                            <div class="map-overlay">
+                                <a href="https://maps.google.com/?q=Beneden+beekloop+32+5662+HL+Geldrop" target="_blank" class="btn btn-primary">
+                                    <i class="fas fa-map-marked-alt"></i> Open in Google Maps
+                                </a>
+                            </div>
+                        </div>
+                        <div class="location-specific-map" id="heeze-map">
+                            <img src="images/map-heeze.jpg" alt="Kaart locatie Cafetaria Heeze" class="map-img">
+                            <div class="map-overlay">
+                                <a href="https://maps.google.com/?q=Jan+Deckersstraat+45+5591+HS+Heeze" target="_blank" class="btn btn-primary">
+                                    <i class="fas fa-map-marked-alt"></i> Open in Google Maps
+                                </a>
+                            </div>
+                        </div>
+                        <div class="location-specific-map" id="eindhoven-map">
+                            <img src="images/map-eindhoven.jpg" alt="Kaart locatie Cafetaria Eindhoven" class="map-img">
+                            <div class="map-overlay">
+                                <a href="https://maps.google.com/?q=Ouverture+133+5629+PV+Eindhoven" target="_blank" class="btn btn-primary">
+                                    <i class="fas fa-map-marked-alt"></i> Open in Google Maps
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-card">
+                <div class="cta-content">
+                    <h2>Geniet van onze smakelijke gerechten</h2>
+                    <p>Bestel nu telefonisch of kom langs in onze zaak in <span class="location-text">Geldrop</span></p>
+                    <a href="tel:040-3033255" id="cta-section-phone-link" class="btn btn-light btn-lg">
+                        <i class="fas fa-phone-alt"></i> Bestel nu: <span id="cta-section-phone-number">040-3033255</span>
+                    </a>
+                </div>
+                <div class="cta-image">
+                    <img src="images/cta-food.png" alt="Lekker eten van Cafetaria">
+                </div>
+                <div class="cta-decoration"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-bg"></div>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <span class="logo-text">Cafetaria <span id="footer-location-text">Geldrop</span></span>
+                    </div>
+                    <p>Verse snacks en maaltijden, bereid met passie en 25+ jaar ervaring.</p>
+                    <div class="footer-social">
+                        <a href="#" class="social-link" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-col">
+                        <h4>Menu</h4>
+                        <ul>
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#menu">Menukaart</a></li>
+                            <li><a href="#about">Over ons</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Menukaarten</h4>
+                        <ul>
+                            <li><a href="#">Drank en snacks</a></li>
+                            <li><a href="#">Schotels en broodjes</a></li>
+                            <li><a href="#">Lunchkaart</a></li>
+                            <li><a href="#">Menukaart deel 2</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Onze locaties</h4>
+                        <ul class="locations-list">
+                            <li class="location-item active" data-location="geldrop">
+                                <a href="javascript:void(0)">Geldrop</a>
+                            </li>
+                            <li class="location-item" data-location="heeze">
+                                <a href="javascript:void(0)">Heeze</a>
+                            </li>
+                            <li class="location-item" data-location="eindhoven">
+                                <a href="javascript:void(0)">Eindhoven (Blixembosch)</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Contact</h4>
+                        <ul class="contact-list">
+                            <li>
+                                <i class="fas fa-map-marker-alt"></i>
+                                <div class="location-specific-footer active" id="geldrop-footer-address">
+                                    <span>Beneden beekloop 32<br>5662 HL Geldrop</span>
+                                </div>
+                                <div class="location-specific-footer" id="heeze-footer-address">
+                                    <span>Jan Deckersstraat 45<br>5591 HS Heeze</span>
+                                </div>
+                                <div class="location-specific-footer" id="eindhoven-footer-address">
+                                    <span>Ouverture 133<br>5629 PV Eindhoven</span>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-phone-alt"></i>
+                                <div class="location-specific-footer active" id="geldrop-footer-phone">
+                                    <span>040-3033255</span>
+                                </div>
+                                <div class="location-specific-footer" id="heeze-footer-phone">
+                                    <span>040-2261135</span>
+                                </div>
+                                <div class="location-specific-footer" id="eindhoven-footer-phone">
+                                    <span>040-2427863</span>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-clock"></i>
+                                <span>Dagelijks: 12:00 - 21:00</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Cafetaria - Alle rechten voorbehouden</p>
+                <a href="#" class="scroll-to-top" aria-label="Scroll naar boven">
+                    <i class="fas fa-chevron-up"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile order button -->
+    <a href="tel:040-3033255" id="mobile-phone-link" class="mobile-order-btn">
+        <i class="fas fa-phone-alt"></i>
+        <span>Bestel nu</span>
+    </a>
+
+    <!-- Notification Toast -->
+    <div class="toast" id="notification-toast">
+        <div class="toast-icon">
+            <i class="fas fa-info-circle"></i>
+        </div>
+        <div class="toast-content">
+            <span id="toast-message">Bericht hier</span>
+        </div>
+        <button class="toast-close" aria-label="Sluiten">
+            <i class="fas fa-times"></i>
+        </button>
+    </div>
+
+    <!-- Location switcher notification (mobile) -->
+    <div class="location-notification" id="location-notification">
+        <div class="notification-content">
+            <div class="notification-icon">
+                <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div class="notification-text">
+                <p>Het lijkt erop dat je dichter bij onze vestiging in <span id="detected-location-name">Heeze</span> bent.</p>
+            </div>
+        </div>
+        <div class="notification-actions">
+            <button id="switch-to-nearby">Wijzig naar deze locatie</button>
+            <button id="dismiss-notification">Nee, bedankt</button>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="main.js"></script>
+</body>
+</html>
