@@ -5864,7 +5864,7 @@ section {
 
 .hero-text h1 {
     margin-bottom: var(--space-md);
-    font-size: 2.5rem !important;
+    font-size: 2rem !important;
     line-height: 1.1;
 }
 
