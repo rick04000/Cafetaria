@@ -855,9 +855,6 @@ section {
 }
 
 .hero-content {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: var(--space-lg);
     align-items: center;
     width: 100%;
     max-width: 100%;
